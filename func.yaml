@@ -1,0 +1,27 @@
+version: 0.19.0
+name: go-test
+namespace: ""
+runtime: go
+registry: ""
+image: gcr.io/lfabian-sandbox/go-test:latest
+imageDigest: ""
+build: ""
+git: {}
+builder: gcr.io/paketo-buildpacks/builder:base
+builders:
+  base: gcr.io/paketo-buildpacks/builder:base
+  default: gcr.io/paketo-buildpacks/builder:base
+  full: gcr.io/paketo-buildpacks/builder:full
+buildpacks:
+- paketo-buildpacks/go-dist
+- ghcr.io/boson-project/go-function-buildpack:tip
+volumes: []
+buildEnvs: []
+envs: []
+annotations: {}
+options: {}
+labels: []
+healthEndpoints:
+  liveness: /health/liveness
+  readiness: /health/readiness
+created: 2022-01-14T10:58:24.4692337-05:00
